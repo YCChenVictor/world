@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "https://ycchenvictor.github.io/world/static/js/main.c1ed54b5.js",
+    "main.js": "https://ycchenvictor.github.io/world/static/js/main.a84eea80.js",
     "index.html": "https://ycchenvictor.github.io/world/index.html",
-    "main.c1ed54b5.js.map": "https://ycchenvictor.github.io/world/static/js/main.c1ed54b5.js.map"
+    "main.a84eea80.js.map": "https://ycchenvictor.github.io/world/static/js/main.a84eea80.js.map"
   },
   "entrypoints": [
-    "static/js/main.c1ed54b5.js"
+    "static/js/main.a84eea80.js"
   ]
 }
