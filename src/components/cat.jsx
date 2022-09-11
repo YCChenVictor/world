@@ -1,13 +1,20 @@
 import React, { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { useFrame, useThree } from '@react-three/fiber'
 
 function Cat(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/cat.glb')
   const { actions } = useAnimations(animations, group)
+  const { viewport } = useThree()
   useEffect(() => {
-    console.log(actions)
     actions.ArmatureAction.play()
+  })
+  useFrame(({ mouse }) => {
+    const x = (mouse.x * viewport.width) / 2
+    const y = (mouse.y * viewport.height) / 2
+    group.current.position.set(x, y, 0)
+    group.current.rotation.set(-y, x, 0)
   })
   return (
     <group ref={group} {...props} dispose={null}>
