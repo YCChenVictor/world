@@ -6,7 +6,7 @@ const Background = props => {
 
   const {gl} = useThree();
   
-  const texture = useTexture('/space.jpeg')
+  const texture = useTexture('./space.jpeg')
   const formatted = new THREE.WebGLCubeRenderTarget(texture.image.height).fromEquirectangularTexture(gl, texture)
   return(
     <primitive attach="background" object={formatted.texture} />

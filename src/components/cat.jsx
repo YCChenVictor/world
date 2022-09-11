@@ -3,8 +3,10 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
 
 function Cat(props) {
+  console.log('loading cat!!!!!!!!')
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/cat.glb')
+  const { nodes, materials, animations } = useGLTF('./cat.glb')
+
   const { actions } = useAnimations(animations, group)
   const { viewport } = useThree()
   useEffect(() => {
@@ -29,6 +31,6 @@ function Cat(props) {
   )
 }
 
-useGLTF.preload('/cat.glb')
+useGLTF.preload('./cat.glb')
 
 export default Cat;

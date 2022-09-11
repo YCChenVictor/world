@@ -21,8 +21,16 @@ function App() {
         <pointLight position={[10, 10, 10]} />
         <Router>
           <Routes>
-            <Route path="/" element={<Planet position={[0, 0, 0]} />} />
-            <Route path="/foo" element={<Cat position={[4, 0, 0]} />} />
+            <Route path="/planet" element={
+              <Suspense>
+                <Planet position={[0, 0, 0]} />
+              </Suspense>
+            } />
+            <Route path="/cat" element={
+              <Suspense>
+                <Cat position={[0, 0, 0]} />
+              </Suspense>
+            } />
           </Routes>
         </Router>
       </Canvas>
