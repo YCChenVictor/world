@@ -1,12 +1,23 @@
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef, useEffect } from 'react'
+import { useGLTF, useAnimations } from '@react-three/drei'
 
 function Cat(props) {
-  const { nodes, materials } = useGLTF('/cat.glb')
+  const group = useRef()
+  const { nodes, materials, animations } = useGLTF('/cat.glb')
+  const { actions } = useAnimations(animations, group)
+  useEffect(() => {
+    console.log(actions)
+    actions.ArmatureAction.play()
+  })
   return (
-    <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cube.geometry} material={materials.Material} />
-      <mesh geometry={nodes['12221_Cat_v1_l3'].geometry} material={materials.Cat} />
+    <group ref={group} {...props} dispose={null}>
+      <group name="Scene">
+        <group name="Armature" position={[0, 0, 0]} scale={2.35}>
+          <primitive object={nodes.Bone001} />
+          <primitive object={nodes.Bone018} />
+          <skinnedMesh name="Cat" geometry={nodes.Cat.geometry} material={materials.Cat} skeleton={nodes.Cat.skeleton} />
+        </group>
+      </group>
     </group>
   )
 }

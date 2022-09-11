@@ -11,12 +11,12 @@ function App() {
     <div style={{ width: "100%", height: "100vh" }}>
       <Canvas
         flat linear
-        camera={{ fov: 75, position: [0, 0, 20]}}
+        camera={{ fov: 75, position: [4, 4, 10]}}
       >
         <CameraController />
-        {/* <Suspense>
+        <Suspense>
           <Background />
-        </Suspense> */}
+        </Suspense>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <Router>
