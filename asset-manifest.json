@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/world/static/js/main.51b9831c.js",
-    "index.html": "/world/index.html",
-    "main.51b9831c.js.map": "/world/static/js/main.51b9831c.js.map"
+    "main.js": "https://ycchenvictor.github.io/world/static/js/main.51b9831c.js",
+    "index.html": "https://ycchenvictor.github.io/world/index.html",
+    "main.51b9831c.js.map": "https://ycchenvictor.github.io/world/static/js/main.51b9831c.js.map"
   },
   "entrypoints": [
     "static/js/main.51b9831c.js"
